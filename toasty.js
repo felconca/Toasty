@@ -7,17 +7,17 @@
  */
 var Toasty = {
   // Function to show toast notification
-  showToast: function (title, message, iconHTML = null, time = 3000) {
-    var toastBox = document.getElementById("toastBox");
+  showToast: function (title, message, iconHTML, time = 3000) {
+    var toastBox = document.getElementById("toastyBox");
     if (!toastBox) {
       toastBox = document.createElement("div");
-      toastBox.id = "toastBox";
+      toastBox.id = "toastyBox";
       document.body.appendChild(toastBox);
     }
 
     // Create toast element
     var toast = document.createElement("div");
-    toast.classList.add("toast");
+    toast.classList.add("toasty");
 
     // Create icon container if icon HTML is provided
     if (iconHTML !== null) {
@@ -29,17 +29,17 @@ var Toasty = {
 
     // Create toast container for content
     var toastContainer = document.createElement("div");
-    toastContainer.classList.add("toast-container");
+    toastContainer.classList.add("toasty-container");
     toast.appendChild(toastContainer);
 
     // Create header container for title and close button
     var titleHeader = document.createElement("div");
-    titleHeader.classList.add("title-header");
+    titleHeader.classList.add("toasty-header");
     toastContainer.appendChild(titleHeader);
 
     // Create title element and append to title header
     var titleElement = document.createElement("div");
-    titleElement.classList.add("toast-title");
+    titleElement.classList.add("toasty-title");
     titleElement.textContent = title;
     titleHeader.appendChild(titleElement);
 
@@ -47,11 +47,11 @@ var Toasty = {
     if (time !== null) {
       // Create close button and append to title header
       var closeButton = document.createElement("button");
-      closeButton.classList.add("toast-close");
+      closeButton.classList.add("toasty-close");
       closeButton.innerHTML = "&#10005;"; // Close symbol Unicode
       closeButton.addEventListener("click", function () {
         // Add fade-out animation
-        toast.classList.add("fade-out-top");
+        toast.classList.add("toasty-out-top");
         // Remove toast after animation ends
         toast.addEventListener("animationend", function () {
           toastBox.removeChild(toast);
@@ -62,7 +62,7 @@ var Toasty = {
       // Remove toast after the specified time
       setTimeout(function () {
         // Add fade-out animation
-        toast.classList.add("fade-out-top");
+        toast.classList.add("toasty-out-top");
         // Remove toast after animation ends
         toast.addEventListener("animationend", function () {
           toastBox.removeChild(toast);
@@ -72,7 +72,7 @@ var Toasty = {
 
     // Create message element and append to toast container
     var messageElement = document.createElement("div");
-    messageElement.classList.add("toast-text");
+    messageElement.classList.add("toasty-text");
     messageElement.textContent = message;
     toastContainer.appendChild(messageElement);
 

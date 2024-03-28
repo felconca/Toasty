@@ -3,6 +3,7 @@
  * Version: 0.1 March 28, 2024
  * License: OpenSource Free
  * Credits: Animista for animation
+ * Github: https://github.com/felconca/Toasty.git
  */
 var Toasty = {
   // Function to show toast notification

@@ -29,7 +29,7 @@ JavaScript: <script src="your-project/toasty/toasty.js"></script>
  button.addEventListener('click', function(){
   Toasty.showToast('Send Success', 'Message send successfully', '<i class="fa-solid fa-circle-check"></i>', 5000)
 })
-// or 
+### or 
  button.addEventListener('click', function(){
   Toasty.showToast('Send Success', 'Message send successfully', null, null)
 })
